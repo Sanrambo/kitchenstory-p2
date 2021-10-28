@@ -1,0 +1,23 @@
+{
+  "name": "story-kitchen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "startDev": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dompurify": "^2.3.3",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "jsdom": "^18.0.0",
+    "mongoose": "^6.0.12",
+    "mongoose-slug-generator": "^1.0.4",
+    "string-strip-html": "^9.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.14"
+  }
+}
