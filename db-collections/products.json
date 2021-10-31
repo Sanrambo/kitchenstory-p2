@@ -1,0 +1,12 @@
+{"_id":{"$oid":"617e62c6598ec80d10907b1d"},"name":"Kiwi","amount":"1KG","price":14,"img":"000375269.webp","slug":"kiwi","__v":0}
+{"_id":{"$oid":"617e631a598ec80d10907b21"},"name":"Potato","amount":"1KG","price":8,"img":"potatoes-2-jpg-500x500.jpg","slug":"potato","__v":0}
+{"_id":{"$oid":"617e6342598ec80d10907b25"},"name":"Water","amount":"6x1.5L","price":10,"img":"356144-02.jfif","slug":"water","__v":0}
+{"_id":{"$oid":"617e6357598ec80d10907b29"},"name":"Lemon","amount":"1KG","price":5,"img":"lemon.jpg","slug":"lemon","__v":0}
+{"_id":{"$oid":"617e636b598ec80d10907b2d"},"name":"Tomato","amount":"1KG","price":4,"img":"pomodori.jpg","slug":"tomato","__v":0}
+{"_id":{"$oid":"617e638d598ec80d10907b31"},"name":"Zabadi","amount":"170G","price":1.5,"img":"34510-ZABADI-LF-170G-1X60-EN_WEB.jpg","slug":"zabadi","__v":0}
+{"_id":{"$oid":"617e6425598ec80d10907b37"},"name":"Carrot","amount":"1KG","price":6,"img":"carrots.webp","slug":"carrot","__v":0}
+{"_id":{"$oid":"617e6446598ec80d10907b3b"},"name":"Apple Juice","amount":"1.5L","price":9,"img":"1648904-01.jfif","slug":"apple-juice","__v":0}
+{"_id":{"$oid":"617e6461598ec80d10907b3f"},"name":"Orange","amount":"1KG","price":10,"img":"1291292-01.jfif","slug":"orange","__v":0}
+{"_id":{"$oid":"617e64b8598ec80d10907b43"},"name":"Milk","amount":"1L","price":12,"img":"42270-UHT-MILK-FF-1L-SCREWCAP-WITH-VITAMIN-EN_WEB.jpg","slug":"milk","__v":0}
+{"_id":{"$oid":"617e64e2598ec80d10907b47"},"name":"Salt","amount":"200G","price":7,"img":"73cc86beff80f00051cd3461970a2fbfe9453de9-00==h400=w400.jpg","slug":"salt","__v":0}
+{"_id":{"$oid":"617e6501598ec80d10907b4b"},"name":"Onion","amount":"2KG","price":9,"img":"Red-Onion.jpg","slug":"onion","__v":0}

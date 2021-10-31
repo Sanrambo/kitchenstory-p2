@@ -1,0 +1,3 @@
+{"_id":{"$oid":"617e6c88b25528e6b5afb1cb"},"userId":"617e62c6598ec80d10907b1d","productName":"Kiwi","productAmount":"1KG","productPrice":14,"productImg":"000375269.webp","__v":0}
+{"_id":{"$oid":"617e6c8db25528e6b5afb1d1"},"userId":"617e6425598ec80d10907b37","productName":"Carrot","productAmount":"1KG","productPrice":6,"productImg":"carrots.webp","__v":0}
+{"_id":{"$oid":"617e6c92b25528e6b5afb1d7"},"userId":"617e64b8598ec80d10907b43","productName":"Milk","productAmount":"1L","productPrice":12,"productImg":"42270-UHT-MILK-FF-1L-SCREWCAP-WITH-VITAMIN-EN_WEB.jpg","__v":0}
