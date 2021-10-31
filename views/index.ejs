@@ -10,7 +10,7 @@
         integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/style.css">
-    <title>Story Kitchen</title>
+    <title>Kitchen Story</title>
     <style>
 
     </style>
@@ -22,7 +22,7 @@
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <div class="container-fluid ">
-                <a class="navbar-brand" href="#">Kitchen Story</a>
+                <a class="navbar-brand fw-bold" href="#">Kitchen Story</a>
                 <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarText"
                     aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fas fa-bars"></i>
@@ -33,7 +33,7 @@
                             <a class="nav-link active" aria-current="page" href="/">Home</a>
                         </li>
                         <li class="nav-item px-3">
-                            <a class="nav-link active" href="#">Features</a>
+                            <a class="nav-link active" href="/#products-list">Products</a>
                         </li>
                         <li class="nav-item px-3">
                             <a class="nav-link active" href="/store/addProduct">Add Product</a>
@@ -54,7 +54,7 @@
                     <div class="text-white">
                         <h1 class="mb-3">Kitchen Story</h1>
                         <h4 class="mb-3">Your favorite online grocery</h4>
-                        <a class="btn btn-outline-light btn-lg btn-grad" href="#main-content" role="button">SHOP
+                        <a class="btn btn-outline-light btn-lg btn-grad" href="#products-list" role="button">SHOP
                             NOW!</a>
 
                     </div>
@@ -63,9 +63,9 @@
         </div>
 
         <!-- Content -->
-        <div class="content" id="main-content">
+        <div class="content" id="products-list">
             <% if(products.length<1){%>
-                <p>No products available, add new one.</p>
+                <h1 style="text-align: center;">No products available, <a href="/store/addProduct">add new one</a>.</h1>
                 <% } %>
                     <div class="d-flex flex-wrap">
                         <% products.forEach(product=> {%>
@@ -73,7 +73,8 @@
 
                             <div class="left-card">
                                 <div class="card text-center" style="width: 18rem;">
-                                    <img src="/img/<%= product.img %>" class="card-img-top" alt="...">
+                                    <img src="/uploads/<%=product.img%>" class="card-img-top img-card"
+                                        alt="product-img">
                                     <div class="card-body">
                                         <h5 class="card-title">
                                             <%= product.name %>
@@ -106,6 +107,17 @@
 
                             <%})%>
                     </div>
+        </div>
+        <div class="text-center bg-image banner ">
+            <div class="mask" style="background-color: rgba(89, 189, 139, 0.4);">
+                <div class="d-flex justify-content-center align-items-center h-100">
+                    <div class="text-white">
+                        <h1 class="mb-3">Thank you for shoping!</h1>
+                        <h4 class="mb-3">Comeback soon for more offers</h4>
+
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

@@ -10,7 +10,7 @@
         integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/style.css">
-    <title>Story Kitchen</title>
+    <title>Cart</title>
 
 </head>
 
@@ -20,7 +20,7 @@
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light ">
             <div class="container-fluid ">
-                <a class="navbar-brand" href="#">Story Kitchen</a>
+                <a class="navbar-brand fw-bold" href="/">Kitchen Story</a>
                 <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarText"
                     aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fas fa-bars"></i>
@@ -31,7 +31,7 @@
                             <a class="nav-link active" aria-current="page" href="/">Home</a>
                         </li>
                         <li class="nav-item px-3">
-                            <a class="nav-link active" href="#">Features</a>
+                            <a class="nav-link active" href="/#products-list">Products</a>
                         </li>
                         <li class="nav-item px-3">
                             <a class="nav-link active" href="/store/addProduct">Add Product</a>
@@ -46,80 +46,84 @@
             </div>
         </nav>
         <!-- Background image -->
-        <div class="text-center" style="height:100%;">
+        <div class="text-center">
 
-            <div class="d-flex justify-content-center align-items-center">
-                <div class="text-white itemsContent">
-                    <% if(cartItems.length<1){%>
-                        <p>No products available, add one.</p>
-                        <% } %>
-                            <h1 class="mb-3">Your Cart</h1>
+            <div class=" d-flex justify-content-center align-items-center">
+                <div class="text-white">
 
-                            <div class=" row">
-                                <div class="col-12">
-                                    <table class="table table-image">
-                                        <thead>
+                    <h1 class="mb-3 itemsContent">Your Cart</h1>
+
+                    <div class=" row">
+                        <div class="col-12">
+                            <table class="table table-image">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Img</th>
+                                        <th scope="col">Product</th>
+                                        <th scope="col">Amount</th>
+                                        <th scope="col">Price</th>
+                                        <th scope="col">Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% cartItems.forEach(item=> {%>
+                                        <tr>
+                                            <td class="w-25">
+                                                <img src="/uploads/<%=item.productImg%>" class="img-fluid img-thumbnail"
+                                                    alt="product_img">
+                                            </td>
+                                            <td>
+                                                <%= item.productName %>
+                                            </td>
+                                            <td>
+                                                <%= item.productAmount %>
+                                            </td>
+                                            <td>
+                                                <%= item.productPrice %> SAR
+                                            </td>
+                                            <td>
+                                                <form action="/store/cart/delete/<%=item.id%>" method="POST"
+                                                    class="frmb">
+                                                    <button class="b6n">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-trash-fill"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                                                        </svg>
+                                                    </button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        <% });%>
                                             <tr>
-                                                <th scope="col">Img</th>
-                                                <th scope="col">Product</th>
-                                                <th scope="col">Amount</th>
-                                                <th scope="col">Price</th>
-                                                <th scope="col">Delete</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <% cartItems.forEach(item=> {%>
-                                                <tr>
-                                                    <td class="w-25">
-                                                        <img src="/img/<%= item.productImg %>"
-                                                            class="img-fluid img-thumbnail" alt="product_img">
-                                                    </td>
-                                                    <td>
-                                                        <%= item.productName %>
-                                                    </td>
-                                                    <td>
-                                                        <%= item.productAmount %>
-                                                    </td>
-                                                    <td>
-                                                        <%= item.productPrice %> SAR
-                                                    </td>
-                                                    <td>
-                                                        <form action="/store/cart/delete/<%=item.id%>" method="POST"
-                                                            class="frmb">
-                                                            <button class="b6n">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                                                    height="16" fill="currentColor"
-                                                                    class="bi bi-trash-fill" viewBox="0 0 16 16">
-                                                                    <path
-                                                                        d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
-                                                                </svg>
-                                                            </button>
-                                                        </form>
-                                                    </td>
-                                                </tr>
-                                                <% });%>
-                                                    <tr>
-                                                        <td colspan="2">
+                                                <td colspan="2">
 
-                                                        </td>
-                                                        <td colspan="">
+                                                </td>
+                                                <td colspan="">
+                                                    <% if(cartItems.length<1){%>
+                                                        <p>No products available, <a href="/#products-list"
+                                                                class="fw-bold new-cart">add
+                                                                one</a>.
+                                                        </p>
+                                                        <% } %>
                                                             <p class="fw-bold">Total price:</p>
-                                                        </td>
-                                                        <td>
-                                                            <% if (!priceSum.length) {%>
-                                                                0
-                                                                <%}else{%>
-                                                                    <%=priceSum[0].productPrice%> SAR
-                                                                        <%}%>
+                                                </td>
+                                                <td>
+                                                    <% if (!priceSum.length) {%>
+                                                        0
+                                                        <%}else{%>
+                                                            <%=priceSum[0].productPrice%> SAR
+                                                                <%}%>
 
-                                                        </td>
-                                                        <td></td>
-                                                    </tr>
+                                                </td>
+                                                <td></td>
+                                            </tr>
 
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
 
                 </div>
             </div>

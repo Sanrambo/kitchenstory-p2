@@ -122,7 +122,8 @@ td{
 
 tr{
 
-  text-align: center
+  text-align: center;
+  background-color: white;
 }
 
 th{
@@ -138,6 +139,25 @@ th{
 
 .itemsContent{
 
-  margin-top: 100px;
-  align-items: center;
+  margin-top: 75px;
+  
+}
+
+.img-card{
+  height: 20rem;
+}
+
+.new-cart{
+
+  text-decoration: none; 
+  color:black;
+
+}
+
+.new-cart:hover{
+  color:rgba(89, 189, 139, 0.4);
+}
+
+.titleColor{
+  color:rgba(89, 189, 139, 0.4);
 }

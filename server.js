@@ -13,6 +13,7 @@ mongoose.connect('mongodb://localhost:27017/eShop');
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 
+//Adding items to product table
 app.get('/', async (req, res) => {
 
     let products = await Product.find();
@@ -20,18 +21,19 @@ app.get('/', async (req, res) => {
     res.render('index', { products: products });
 });
 
-
+//Add products to cart
 app.get('/cart', async (req, res) => {
+
 
     let cartItems = await Cart.find();
 
-    // console.log(cartItems.productPrice);
+    // Aggregation to calculate the sum prices of added products on the cart
     let priceSum = await Cart.aggregate([{ $group: { _id: null, productPrice: { $sum: "$productPrice" } } }]);
-    // console.log(priceSum[0].productPrice);
+
     if (!priceSum.length) {
         priceSum = 0
     }
-    console.log(priceSum);
+
 
     res.render('cart', { cartItems: cartItems, priceSum: priceSum });
 });
