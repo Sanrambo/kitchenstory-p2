@@ -25,7 +25,15 @@ app.get('/cart', async (req, res) => {
 
     let cartItems = await Cart.find();
 
-    res.render('cart', { cartItems: cartItems });
+    // console.log(cartItems.productPrice);
+    let priceSum = await Cart.aggregate([{ $group: { _id: null, productPrice: { $sum: "$productPrice" } } }]);
+    // console.log(priceSum[0].productPrice);
+    if (!priceSum.length) {
+        priceSum = 0
+    }
+    console.log(priceSum);
+
+    res.render('cart', { cartItems: cartItems, priceSum: priceSum });
 });
 
 
